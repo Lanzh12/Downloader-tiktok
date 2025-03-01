@@ -11,12 +11,8 @@ export const getUrl = async (url) => {
     let { audio, video } = await res.json();
     
     let buttons = `
-        <a href="${audio[0]}" target='_blank' class='btn'>Download Audio</a>
+        <a href="${audio[0]}" download class='btn'>Unduh Audio</a>
+        <a href="${video}" download class='btn'>Unduh Video</a>
     `;
-    let videoElement = `
-        <video controls="" autoplay="" name="media">
-            <source src="${video}" type="video/mp4"></source>
-        </video>
-    `;
-    content.innerHTML = `${buttons} ${videoElement}`;
+    content.innerHTML = `${buttons}`;
 }
